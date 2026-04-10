@@ -1,6 +1,5 @@
 <?php
-
-declare(strict_types=1);
+ob_start(); // Buffer tout output pour éviter "headers already sent"
 
 require_once __DIR__ . '/../core/bootstrap.php';
 
