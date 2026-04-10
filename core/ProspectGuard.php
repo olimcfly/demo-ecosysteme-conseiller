@@ -11,8 +11,9 @@ class ProspectGuard
     // Routes accessibles sans authentification
     private const PUBLIC_PATHS = [
         '/acces',
-        '/acces/merci',
+        '/sondage',
         '/api/prospect/register',
+        '/api/prospect/sondage',
         '/robots.txt',
         '/sitemap.xml',
         '/health',

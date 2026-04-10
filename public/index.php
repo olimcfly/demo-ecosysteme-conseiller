@@ -89,11 +89,19 @@ function servePage(string $file): void {
 //  ACCÈS DÉMO — Page de capture prospect
 // ══════════════════════════════════════════════════════════════
 $router->get('/acces', function() {
-    require ROOT_PATH . '/public/pages/acces/inscription.php';
+    require ROOT_PATH . '/public/pages/acces/landing.php';
+});
+
+$router->get('/sondage', function() {
+    require ROOT_PATH . '/public/pages/acces/sondage.php';
 });
 
 $router->post('/api/prospect/register', function() {
     require ROOT_PATH . '/public/api/prospect/register.php';
+});
+
+$router->post('/api/prospect/sondage', function() {
+    require ROOT_PATH . '/public/api/prospect/sondage.php';
 });
 
 // ══════════════════════════════════════════════════════════════
