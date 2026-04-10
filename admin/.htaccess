@@ -1,0 +1,25 @@
+Options -Indexes
+RewriteEngine On
+
+# Forcer HTTPS sur l'administration
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Autoriser fichiers et dossiers réels
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Réécriture des pages principales
+RewriteRule ^login/?$ login.php [L,QSA]
+RewriteRule ^profile/?$ profile.php [L,QSA]
+RewriteRule ^logout/?$ logout.php [L,QSA]
+
+# Fallback sur index.php
+RewriteRule ^ index.php [QSA,L]
+
+# Bloquer l'accès aux fichiers sensibles
+<FilesMatch "\.(env|log|sql|md|ini|bak|swp|git)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

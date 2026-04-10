@@ -1,0 +1,338 @@
+/* Styles pour la page biens */
+.hero--biens .hero__bg {
+    background-size: cover;
+    background-position: center 30%;
+}
+
+.hero__stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.hero__filters-preview {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.filter-pill {
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.filter-pill.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* Formulaires de filtres */
+.filters-form {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: var(--color-white);
+}
+
+.filters-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Grille des biens */
+.biens-grid {
+    gap: 2rem;
+}
+
+.bien-card {
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bien-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.bien-card__header {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.bien-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bien-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.bien-badge.vente {
+    background: var(--color-primary);
+    color: white;
+}
+
+.bien-badge.location {
+    background: var(--color-accent);
+    color: white;
+}
+
+.bien-badge.warning {
+    background: #f59e0b;
+    color: white;
+}
+
+.bien-card__body {
+    padding: 1.5rem;
+}
+
+.bien-card__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.bien-card__location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.bien-card__specs {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.spec-item svg {
+    color: var(--color-primary);
+}
+
+.bien-card__price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 1rem 0;
+}
+
+.bien-card__desc {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.pagination__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.pagination__link:hover:not(.disabled) {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.pagination__link.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination__current {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+/* Header des résultats */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.results-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.results-count {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.sort-select {
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    background: var(--color-white);
+}
+
+/* Message aucun résultat */
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.no-results__icon {
+    margin-bottom: 1.5rem;
+    color: var(--color-border);
+}
+
+.no-results h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.no-results p {
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+/* Services */
+.service-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.service-card__icon {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.service-card__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.service-card__text {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.service-card__link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.service-card__link:hover {
+    text-decoration: underline;
+}
+.placeholder-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #1a3c5e, #0f2644);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.placeholder-image span {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.placeholder-image p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+.biens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}

@@ -1,0 +1,42 @@
+<IfModule mod_headers.c>
+    # Base pour assets non versionnés
+    <FilesMatch "\.(?:css|js|mjs|gif|jpe?g|png|svg|webp|avif|ico|woff2?|ttf|otf)$">
+        Header append Vary Accept-Encoding
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+
+    # Cache long pour assets versionnés
+    Header set Cache-Control "public, max-age=31536000, immutable" env=VERSIONED_ASSET
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType image/jpg "access plus 6 months"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/gif "access plus 6 months"
+    ExpiresByType image/svg+xml "access plus 6 months"
+    ExpiresByType image/webp "access plus 6 months"
+    ExpiresByType image/avif "access plus 6 months"
+    ExpiresByType image/x-icon "access plus 6 months"
+    ExpiresByType font/woff2 "access plus 6 months"
+    ExpiresByType font/woff "access plus 6 months"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Sitemap dynamique
+    RewriteRule ^sitemap\.xml$ sitemap.php [L,QSA]
+
+    # Si le fichier ou le dossier existe physiquement, on le charge normalement
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Pour tout le reste, on redirige vers index.php
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>

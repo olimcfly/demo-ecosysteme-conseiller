@@ -1,0 +1,55 @@
+# Config sensible
+.env
+.env.*
+!.env.example
+config/smtp.php
+config/license.json
+config/.installed
+
+/tmp/
+
+# Archives / dumps / gros fichiers
+*.zip
+*.tar
+*.gz
+*.xlsx
+
+# Images volumineuses (données locales)
+images_pascal_hamm/
+
+# Logs / cache
+logs/*.log
+logs/*.txt
+cache/*
+!cache/.gitkeep
+*.log
+error_log
+public/error_log
+
+# Uploads / fichiers générés
+uploads/*
+!uploads/.gitkeep
+/storage/
+
+# Temp / système
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# Dépendances / outils
+node_modules/
+vendor/
+.vscode/
+.idea/
+*.sublime-*
+
+
+# Assets build (générés)
+public/assets/build/
+public/admin/assets/build/
+modules/gmb/assets/build/
+storage/cache/assets-manifest.json
