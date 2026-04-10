@@ -65,6 +65,9 @@ HTML;
     exit;
 }
 
+// ── Vérification accès prospect (avant toute route) ──────────
+ProspectGuard::check();
+
 $router = new Router();
 
 // ── Helper : charge une page dans le layout ────────────────────
@@ -81,6 +84,17 @@ function servePage(string $file): void {
     $pageContent = ob_get_clean();
     require ROOT_PATH . '/public/templates/layout.php';
 }
+
+// ══════════════════════════════════════════════════════════════
+//  ACCÈS DÉMO — Page de capture prospect
+// ══════════════════════════════════════════════════════════════
+$router->get('/acces', function() {
+    require ROOT_PATH . '/public/pages/acces/inscription.php';
+});
+
+$router->post('/api/prospect/register', function() {
+    require ROOT_PATH . '/public/api/prospect/register.php';
+});
 
 // ══════════════════════════════════════════════════════════════
 //  ACCUEIL

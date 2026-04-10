@@ -47,6 +47,8 @@ require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/Session.php';
 require_once __DIR__ . '/Auth.php';
 require_once __DIR__ . '/Router.php';
+require_once __DIR__ . '/ProspectsDB.php';
+require_once __DIR__ . '/ProspectGuard.php';
 // ── Helpers ──────────────────────────────────────────────────
 require_once __DIR__ . '/helpers/helpers.php';
 require_once __DIR__ . '/helpers/sanitize.php';
