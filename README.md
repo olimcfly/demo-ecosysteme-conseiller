@@ -19,3 +19,4 @@ Le script :
 - crée `storage/cache/assets-manifest.json` utilisé par `asset_url()` pour charger automatiquement la version hashée en priorité;
 - supprime les anciens assets build devenus orphelins.
 # test-conseiller
+# test-conseiller
