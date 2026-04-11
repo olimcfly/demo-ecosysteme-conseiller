@@ -18,3 +18,4 @@ Le script :
 - génère des fichiers `*.min.css` et `*.min.js` versionnés par hash dans des dossiers `build/`;
 - crée `storage/cache/assets-manifest.json` utilisé par `asset_url()` pour charger automatiquement la version hashée en priorité;
 - supprime les anciens assets build devenus orphelins.
+# test-conseiller
